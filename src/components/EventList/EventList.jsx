@@ -1,15 +1,33 @@
 import "./EventList.scss";
 
 import EventCard from "../EventCard/EventCard.jsx"
+import List from "../List/List.jsx";
+import ListItem from "../List/ListItem.jsx";
 
-const EventList = () => {
+const EventList = ({events}) => {
 
   return (
-    <div className="event-list">
+    // <div className="event-list">
+    <div>
         {/* Notes: 
             - adding T12:00:00Z at the end of date prop corrects the date bug 
             - time prop not consistent throughout but decided to leave it the way it is to match the MockUps*/}
-        <EventCard className="event-list__card"
+        <List className="event-list">
+          {events.map((event) => (
+            <ListItem key={event.id} className="eventcard-list__item">
+              <EventCard
+                id={event.id}
+                title={event.title}
+                date={event.date}
+                time={event.time}
+                description={event.description}
+              />
+            </ListItem>
+          ))}
+        </List>
+        
+        
+        {/* <EventCard className="event-list__card"
             title="Code Horizon" 
             date="2025-01-08T12:00:00Z" 
             time="7:00-9:00 PM" 
@@ -38,7 +56,7 @@ const EventList = () => {
             date="2025-03-16T12:00:00Z" 
             time="9:00 AM-5:00 PM"
             paragraph="A one-day microconference where speakers will spend the day charting the evolution of JavaScript, serverless, and the edge ecosystem."
-            /> 
+            />  */}
     </div>
   );
 };

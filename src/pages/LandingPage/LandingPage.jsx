@@ -6,6 +6,10 @@ import ContentCard from "../../components/ContentCard/ContentCard.jsx";
 import "./LandingPage.scss";
 
 const LandingPage = ({ events }) => {
+
+  
+  console.log(events);
+
   return (
     <div>
       <PageHeader title="Events">
