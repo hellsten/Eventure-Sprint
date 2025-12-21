@@ -32,18 +32,20 @@ const year = d.getFullYear();
 
 
   return (
-    <section className="event">
-        <div className="event__graphic">
+    <section className="event-card">
+        <div className="event-card__graphic">
             <EventGraphic date={props.date} />
         </div>
-        <div className="event__info">
-            <h1>{props.title}</h1>
-            <h2>{dayOfWeekName}, {monthName} {dayOfMonth}, {year} | {props.time}</h2>
-            <p>{props.paragraph}</p>
-        </div> 
-        <div className="event__buttons">
-            <SecondaryButton>Learn More</SecondaryButton>
-            <Button>Register Now</Button>
+        <div className="event-card__info">
+            <div className="event-card__data">
+                <h1 className="event-card__data-title">{props.title}</h1>
+                <h2 className="event-card__data-time">{dayOfWeekName}, {monthName} {dayOfMonth}, {year} | {props.time}</h2>
+                <p className="event-card__data-paragraph">{props.paragraph}</p>
+            </div> 
+            <div className="event-card__buttons">
+                <SecondaryButton className="event-card__button">Learn More</SecondaryButton>
+                <Button className="event-card__button">Register Now</Button>
+            </div>
         </div>
     </section>
   );
