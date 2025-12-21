@@ -13,7 +13,7 @@ const EventCard = (props) => {
 const d = new Date(props.date);
 
 //converting date to name of weekday
-const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let dayOfWeekName = weekdays[d.getDay()];
 //console.log(dayOfWeekName); // ex "Friday"
 
@@ -43,8 +43,8 @@ const year = d.getFullYear();
                 <p className="event-card__data-paragraph">{props.description}</p>
             </div> 
             <div className="event-card__buttons">
-                <SecondaryButton className="event-card__button">Learn More</SecondaryButton>
-                <Button className="event-card__button">Register Now</Button>
+                <SecondaryButton className="event-card__button">Learn more</SecondaryButton>
+                <Button className="event-card__button">Register now</Button>
             </div>
         </div>
     </section>

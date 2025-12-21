@@ -21,5 +21,12 @@
   @include tablet {
     padding: 48px 108px;
   }
+}
 
+.typography--h1{
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  margin: 4rem 0;
 }

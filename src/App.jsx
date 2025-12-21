@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import "./App.scss";
-
 import PageHeader from "./components/PageHeader/PageHeader.jsx";
 import EventList from "./components/EventList/EventList.jsx"
 import ComponentDocs from "./pages/ComponentDocs/ComponentDocs.jsx";
 import PageFooter from "./components/PageFooter/PageFooter.jsx";
 import LandingPage from "./pages/LandingPage/LandingPage.jsx";
 import AttendingCard from "./components/AttendingCard/AttendingCard.jsx";
+
+import "./App.scss";
 
 const App = () => {
   {/* Notes: 
@@ -52,9 +52,8 @@ const App = () => {
 
   return (
     <>
-      <PageHeader title="Events">
-        <EventList events={eventData}/>
-      </PageHeader>
+      <PageHeader className="page-header-title" title="Events"/>
+      <EventList events={eventData}/>
       
       <div className="attending-banner">
         <AttendingCard 

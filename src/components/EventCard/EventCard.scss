@@ -21,14 +21,22 @@
         gap: 8px;
         &-title{
             margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 120%;
+            letter-spacing: -2%;
         }
         &-time{
             margin: 0;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 140%;
+            letter-spacing: 0%;
         }
         &-paragraph{
             margin: 0;
             font-weight: 400;
-            font-size: 1rem;
+            font-size: 1.01rem;
             line-height: 140%;
             letter-spacing: 0%;
             color: $color-gray-dark;
@@ -41,5 +49,6 @@
     }
     &__button{
         height: 44px;
+        font-size: 1rem;
     }
 }

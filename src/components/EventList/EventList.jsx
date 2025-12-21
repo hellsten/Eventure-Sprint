@@ -8,13 +8,13 @@ const EventList = ({events}) => {
 
   return (
     // <div className="event-list">
-    <div>
+    <div className="event-list">
         {/* Notes: 
             - adding T12:00:00Z at the end of date prop corrects the date bug 
             - time prop not consistent throughout but decided to leave it the way it is to match the MockUps*/}
-        <List className="event-list">
+        <List className="event-list__containers">
           {events.map((event) => (
-            <ListItem key={event.id} className="eventcard-list__item">
+            <ListItem key={event.id} className="event-list__item">
               <EventCard
                 id={event.id}
                 title={event.title}
