@@ -1,3 +1,5 @@
+@use "./styles/mixins.scss" as *;
+
 .app {
   display: flex;
   flex-direction: column;
@@ -6,4 +8,18 @@
   &__routes {
     flex-grow: 1;
   }
+}
+
+.attending-banner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: pxToRem(12);
+  flex-shrink: 0;
+  padding: 48px;  
+  @include tablet {
+    padding: 48px 108px;
+  }
+
 }
