@@ -1,6 +1,6 @@
 import "./SecondaryButton.scss";
 
-const Button = ({
+const SecondaryButton = ({
   type = "button",
   variant = "secondary",
   disabled = false,

@@ -1,6 +1,8 @@
 import "./EventCard.scss";
 
-import EventGraphic from "../EventGraphic/EventGraphic";
+import EventGraphic from "../EventGraphic/EventGraphic.jsx";
+import Button from "../Button/Button.jsx";
+import SecondaryButton from "../SecondaryButton/SecondaryButton.jsx"
 
 const EventCard = (props) => {
 
@@ -30,15 +32,19 @@ const year = d.getFullYear();
 
 
   return (
-    <section>
-        <div>
+    <section className="event">
+        <div className="event__graphic">
             <EventGraphic date={props.date} />
         </div>
-        <div>
+        <div className="event__info">
             <h1>{props.title}</h1>
             <h2>{dayOfWeekName}, {monthName} {dayOfMonth}, {year} | {props.time}</h2>
             <p>{props.paragraph}</p>
         </div> 
+        <div className="event__buttons">
+            <SecondaryButton>Learn More</SecondaryButton>
+            <Button>Register Now</Button>
+        </div>
     </section>
   );
 };
