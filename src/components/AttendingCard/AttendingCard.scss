@@ -3,9 +3,9 @@
 @use "../../styles/mixins" as *;
 
 .attending-card {
-  margin: 3.5rem 0 7rem 2rem;
+  margin: 3.5rem 0 3rem 2rem;
   padding: 24px;
-  max-width: 286px;
+  width: 286px;
   border: 1px solid $color-gray-light;
   border-radius: $border-radius-md;
   background: $color-white;
@@ -15,12 +15,12 @@
   text-align: left;
   gap: 1rem;
   @include tablet{
-    max-width: 568px;
-    margin: 4rem 0 7rem 2rem;
+    width: 568px;
+    margin: 7rem 0 10rem 0rem;
   }
   @include desktop{
-    max-width: 1072px;
-    margin: 3.5rem 0 7rem 2rem;
+    width: 1072px;
+    margin: 7rem 0 8rem 0;
   }
   &__icon {
     width: 48px;

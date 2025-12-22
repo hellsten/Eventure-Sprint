@@ -5,7 +5,7 @@
 .page-footer {
   border-top: 1px solid $color-gray-light;
   width: 100%;
-  max-width: $max-width-lg;
+  width: 372px;
   margin: 0 auto;
   line-height: 1.4;
   font-weight: 400;
@@ -17,8 +17,10 @@
   text-align: center;
 
   @include tablet {
+    max-width: $max-width-lg;
     flex-direction: row;
     text-align: left;
+    width: 100%;
   }
 
   &__list {
@@ -42,5 +44,9 @@
   }
   &__copy {
     color: $color-gray-dark;
+    padding: 1rem 3.5rem;
+    @include tablet{
+      padding: 0;
+    }
   }
 }
