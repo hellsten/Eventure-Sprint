@@ -1,10 +1,11 @@
 @use "../../styles/variables" as *;
 @use "../../styles/functions" as *;
+@use "../../styles/mixins" as *;
 
 .attending-card {
   margin: 3.5rem 0 7rem 2rem;
   padding: 24px;
-  width: 1072px;
+  max-width: 286px;
   border: 1px solid $color-gray-light;
   border-radius: $border-radius-md;
   background: $color-white;
@@ -13,6 +14,14 @@
   align-items: flex-start;
   text-align: left;
   gap: 1rem;
+  @include tablet{
+    max-width: 568px;
+    margin: 4rem 0 7rem 2rem;
+  }
+  @include desktop{
+    max-width: 1072px;
+    margin: 3.5rem 0 7rem 2rem;
+  }
   &__icon {
     width: 48px;
     height: 48px;
@@ -27,11 +36,17 @@
   &__description {
     color: $color-gray-dark;
     margin: 0;
-    width: 936px;
+    
     font-size: 1rem;
     font-weight: 400;
     line-height: 140%;
     letter-spacing: 0%;
+    @include tablet{
+      max-width: 520px;
+    }
+    @include desktop{
+      max-width: 936px;
+    }
   }
   &__button {
     margin-top: auto;

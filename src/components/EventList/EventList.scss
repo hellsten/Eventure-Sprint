@@ -1,4 +1,5 @@
 @use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
 
 .event-list{
     margin: 0;
@@ -15,7 +16,11 @@
         align-items: center;
     }
     &__items{
-        width: 1072px;
-        
+        @include tablet{
+            width: 568px;
+        }
+        @include desktop{
+            width: 1072px;
+        }
     }
 }
