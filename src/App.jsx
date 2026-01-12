@@ -52,7 +52,7 @@ const App = () => {
 
   return (
     <>
-      <PageHeader className="page-header-title" title="Events"/>
+      {/* <PageHeader className="page-header-title" title="Events"/>
       <EventList events={eventData}/>
       
       <div className="attending-banner">
@@ -65,13 +65,16 @@ const App = () => {
         />
       </div>
 
-      <PageFooter />
+      <PageFooter /> */}
 
-      {/* <BrowserRouter>
-        <LandingPage events={eventData}/>
+      <BrowserRouter>
+        <PageHeader className="page-header-title" title="Events"/>
+        <Routes>
+          <Route path="/" element={<LandingPage events={eventData}/>}/>
+        </Routes>
         <PageFooter />
         <ComponentDocs />
-      </BrowserRouter> */}
+      </BrowserRouter> 
       
 
     </>
