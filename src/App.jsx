@@ -71,6 +71,9 @@ const App = () => {
         <PageHeader className="page-header-title" title="Events"/>
         <Routes>
           <Route path="/" element={<LandingPage events={eventData}/>}/>
+          <Route path="registration" element={<SignupForm/>}/>
+          <Route path="EventAttendees" element={<EventAttendees/>}/>
+          <Route path="ManageEvents" element={<ManageEvents/>}/>
         </Routes>
         <PageFooter />
         <ComponentDocs />
