@@ -114,11 +114,11 @@ const App = () => {
           <Route path="/" element={<EventList events={eventData}/>} />
           <Route path="registration/:id" element={<SignupForm events={eventData} attendees={attendees} setAttendees={setAttendees} user={user}/>} />
           <Route path="RSVP/:id" element={<EventAttendees events={eventData} attendees={attendees}/>} />
-          <Route path="list" element={<ManageEvents />} />
+          <Route path="list" element={<ManageEvents events={eventData} attendees={attendees} onUpdateAttendees={setAttendees}/>} />
         </Routes>
 
         <PageFooter />
-        <ComponentDocs />
+        {/* <ComponentDocs /> */}
       </BrowserRouter> 
 
       
