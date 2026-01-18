@@ -9,6 +9,7 @@ const AttendingCard = ({
   cardTitle,
   buttonText,
   description,
+  
   className = "",
   buttonLink,
   children,

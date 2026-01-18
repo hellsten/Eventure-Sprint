@@ -78,7 +78,7 @@ const EventList = ({events}) => {
               cardTitle="Attending an event?"
               description="Stay organized and in the loop. Check your upcoming event registrations and view schedules, updates, and important info. Everything you need to know is all in one place."
               buttonText="View your events"
-
+              
             />
           </div>
     </>

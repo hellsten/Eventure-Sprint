@@ -38,7 +38,7 @@ function handleClickRegistration() {
 }
 
 function handleClickRSVP(){
-    navigate('/RSVP');
+    navigate(`/RSVP/${props.id}`);
 }
 
 
