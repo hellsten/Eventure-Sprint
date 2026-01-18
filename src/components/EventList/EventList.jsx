@@ -6,11 +6,14 @@ import ListItem from "../List/ListItem.jsx";
 
 import PageHeader from "../PageHeader/PageHeader.jsx";
 import AttendingCard from "../AttendingCard/AttendingCard.jsx";
+import { useNavigate } from "react-router-dom";
 
 const EventList = ({events}) => {
 
+
   return (
     // <div className="event-list">
+
     <>
     
       <PageHeader className="page-header-title" title="Events"/>
@@ -73,7 +76,7 @@ const EventList = ({events}) => {
               cardTitle="Attending an event?"
               description="Stay organized and in the loop. Check your upcoming event registrations and view schedules, updates, and important info. Everything you need to know is all in one place."
               buttonText="View your events"
-              buttonLink="#"
+
             />
           </div>
     </>

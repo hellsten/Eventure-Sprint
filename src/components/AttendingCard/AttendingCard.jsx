@@ -2,6 +2,7 @@ import Icon from "../Icon/Icon.jsx";
 import SecondaryButton from "../SecondaryButton/SecondaryButton.jsx";
 import Typography from "../Typography/Typography.jsx";
 import "./AttendingCard.scss";
+import { useNavigate } from "react-router-dom";
 
 const AttendingCard = ({
   iconName,
@@ -12,6 +13,10 @@ const AttendingCard = ({
   buttonLink,
   children,
 }) => {
+        let navigate = useNavigate();
+    function handleClickList() {
+      navigate('/list');
+    }
   return (
     <article className={`attending-card ${className}`.trim()}>
       <Icon className="attending-card__icon" name={iconName} />
@@ -25,6 +30,7 @@ const AttendingCard = ({
         variant="secondary"
         isLink={true}
         to={buttonLink}
+        onClick={handleClickList}
       >
         {buttonText}
       </SecondaryButton>

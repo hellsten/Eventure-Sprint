@@ -75,6 +75,7 @@ const App = () => {
       
       <BrowserRouter>
         <Routes>
+          {/* Need to include props */}
           <Route path="/" element={<EventList events={eventData} />} />
           <Route path="registration" element={<SignupForm events={eventData} />} />
           <Route path="RSVP" element={<EventAttendees events={eventData} />} />

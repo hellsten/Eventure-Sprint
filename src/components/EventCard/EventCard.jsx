@@ -4,6 +4,8 @@ import EventGraphic from "../EventGraphic/EventGraphic.jsx";
 import Button from "../Button/Button.jsx";
 import SecondaryButton from "../SecondaryButton/SecondaryButton.jsx"
 
+import { useNavigate } from 'react-router-dom';
+
 const EventCard = (props) => {
 
 //console.log(props.date);
@@ -30,6 +32,15 @@ const dayOfMonth = d.getDate();
 const year = d.getFullYear();
 //console.log(year); // ex "2025"
 
+let navigate = useNavigate();
+function handleClickRegistration() {
+    navigate('/registration');
+}
+
+function handleClickRSVP(){
+    navigate('/RSVP');
+}
+
 
   return (
     <section className="event-card">
@@ -43,8 +54,8 @@ const year = d.getFullYear();
                 <p className="event-card__data-paragraph">{props.description}</p>
             </div> 
             <div className="event-card__buttons">
-                <SecondaryButton className="event-card__button">Learn more</SecondaryButton>
-                <Button className="event-card__button">Register now</Button>
+                <SecondaryButton className="event-card__button" onClick={handleClickRSVP}>Learn more</SecondaryButton>
+                <Button className="event-card__button" onClick={handleClickRegistration}>Register now</Button>
             </div>
         </div>
     </section>
