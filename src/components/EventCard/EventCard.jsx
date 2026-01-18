@@ -34,7 +34,7 @@ const year = d.getFullYear();
 
 let navigate = useNavigate();
 function handleClickRegistration() {
-    navigate('/registration');
+    navigate(`/registration/${props.id}`);
 }
 
 function handleClickRSVP(){
