@@ -6,7 +6,12 @@ import PageFooter from "./components/PageFooter/PageFooter.jsx";
 import LandingPage from "./pages/LandingPage/LandingPage.jsx";
 import AttendingCard from "./components/AttendingCard/AttendingCard.jsx";
 
+import SignupForm from "./pages/SignupForm/SignupForm.jsx";
+import EventAttendees from "./pages/EventAttendees/EventAttendees.jsx";
+
 import "./App.scss";
+import ManageEvents from "./pages/ManageEvents/ManageEvents.jsx";
+
 
 const App = () => {
   {/* Notes: 
@@ -54,7 +59,6 @@ const App = () => {
     <>
       {/* <PageHeader className="page-header-title" title="Events"/>
       <EventList events={eventData}/>
-      
       <div className="attending-banner">
         <AttendingCard 
           iconName="calendar"
@@ -64,20 +68,26 @@ const App = () => {
           buttonLink="#"
         />
       </div>
-
       <PageFooter /> */}
 
+      
+
+      
       <BrowserRouter>
-        <PageHeader className="page-header-title" title="Events"/>
         <Routes>
-          <Route path="/" element={<LandingPage events={eventData}/>}/>
-          <Route path="registration" element={<SignupForm/>}/>
-          <Route path="EventAttendees" element={<EventAttendees/>}/>
-          <Route path="ManageEvents" element={<ManageEvents/>}/>
+          <Route path="/" element={<EventList events={eventData} />} />
+          <Route path="registration" element={<SignupForm events={eventData} />} />
+          <Route path="RSVP" element={<EventAttendees events={eventData} />} />
+          <Route path="list" element={<ManageEvents />} />
         </Routes>
+
         <PageFooter />
         <ComponentDocs />
       </BrowserRouter> 
+
+      
+
+    
       
 
     </>
