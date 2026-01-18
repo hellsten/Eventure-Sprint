@@ -1,3 +1,5 @@
+// Self Notes: Add dynamic URL for event attendee List
+
 import "./EventList.scss";
 
 import EventCard from "../EventCard/EventCard.jsx"
@@ -29,7 +31,7 @@ const EventList = ({events}) => {
                 <EventCard
                   id={event.id}
                   title={event.title}
-                  date={event.date}
+                  date={`${event.date}T12:00:00Z`}
                   time={event.time}
                   description={event.description}
                 />
