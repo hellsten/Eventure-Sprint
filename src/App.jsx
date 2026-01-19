@@ -70,19 +70,19 @@ const App = () => {
     const fetchUser = async () => {
       const response = await axios.get("https://unit-3-api-6b6268be0363.herokuapp.com/register");
       setUser(response.data);
-      console.log(response.data);
+      // console.log(response.data);
 
       const eventsResponse = await axios.get(
         `https://unit-3-api-6b6268be0363.herokuapp.com/events?api_key=${response.data}`
       );
       setEventData(eventsResponse.data);
-      console.log(eventsResponse);
+      // console.log(eventsResponse);
 
       const attendeesResponse = await axios.get(
         `https://unit-3-api-6b6268be0363.herokuapp.com/attendees?api_key=${response.data}`
       );
       setAttendees(attendeesResponse.data);
-      console.log(attendeesResponse);
+      // console.log(attendeesResponse);
 
 
     };
@@ -111,7 +111,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           {/* Need to include props */}
-          <Route path="/" element={<EventList events={eventData}/>} />
+          <Route path="/" element={<LandingPage events={eventData}/>} />
           <Route path="registration/:id" element={<SignupForm events={eventData} attendees={attendees} setAttendees={setAttendees} user={user}/>} />
           <Route path="RSVP/:id" element={<EventAttendees events={eventData} attendees={attendees}/>} />
           <Route path="list" element={<ManageEvents events={eventData} attendees={attendees} onUpdateAttendees={setAttendees}/>} />

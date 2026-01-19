@@ -8,7 +8,7 @@ import "./LandingPage.scss";
 const LandingPage = ({ events }) => {
 
   
-  console.log(events);
+  // console.log(events);
 
   return (
     <div>
@@ -19,7 +19,7 @@ const LandingPage = ({ events }) => {
               <EventCard
                 id={event.id}
                 title={event.title}
-                date={event.date}
+                date={`${event.date}T12:00:00Z`}
                 time={event.time}
                 description={event.description}
               />
@@ -34,7 +34,7 @@ const LandingPage = ({ events }) => {
             iconName="calendar"
             cardTitle="Attending an event?"
             description="Stay organized and in the loop. Check upcoming event registrations and view schedules, updates, and important info. Everything you need to know is all in one place."
-            buttonText="View events"
+            buttonText="View your events"
             buttonLink="/manage-events"
           />
         </div>

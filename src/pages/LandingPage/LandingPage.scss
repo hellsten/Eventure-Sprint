@@ -6,30 +6,37 @@
 }
 .content-cards {
   max-width: $max-width-lg;
-  margin: 0 auto pxToRem(32) auto;
+  padding: 2rem 0 2rem 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: pxToRem(32);
+  @include tablet{
+    padding: 5rem 0 10rem 0;
+  }
+  @include desktop{
+    margin: 0 auto pxToRem(32) auto;
+  }
   &__link {
     text-decoration: none;
     width: 100%;
     display: flex;
-    @include tablet {
-      width: calc(50% - pxToRem(32));
+    width: 335px;
+    @include tablet{
+      width: 568px;
     }
-    @include desktop {
-      width: calc(33.333% - pxToRem(32));
+    @include desktop{
+      width: 1072px;
     }
   }
 }
 
 .manage-events-section {
   text-align: center;
-  padding: pxToRem(42);
+  //padding: pxToRem(42);
 
   @include tablet {
-    padding: pxToRem(42) pxToRem(108);
+  //  padding: pxToRem(42) pxToRem(108);
   }
 
   &__title {
@@ -41,10 +48,19 @@
 .eventcard-list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 24px 0 96px 0;
   display: flex;
   flex-direction: column;
   gap: pxToRem(24);
+  width: 335px;
+  @include tablet{
+    width: 568px;
+    padding: 2rem 0 2rem 0;
+  }
+  @include desktop{
+    width: 1072px;
+    padding: 24px 0 96px 0;
+  }
   &__item {
     padding: pxToRem(24);
     display: flex;
