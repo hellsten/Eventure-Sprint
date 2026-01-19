@@ -3,21 +3,52 @@
 @use "../../styles/functions" as *;
 
 .manage-events {
+  gap: 32px;
+  
+  
   &__wrapper {
-    max-width: $max-width-md;
-    padding: 0 pxToRem(16);
-    margin: pxToRem(93) auto 0 auto;
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    margin: 0 0 1rem 0;
+    @include tablet{
+      max-width: 569px;
+      justify-items: center;
+      margin: 4rem auto 5rem auto;
+    }
+    @include desktop{
+      max-width: 1159px;
+      padding: 0 pxToRem(16);
+      margin: pxToRem(93) auto 0 auto;
+    }
   }
   &__button-group {
+    width: 287px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: pxToRem(27);
+    margin: pxToRem(27) auto;
+    @include tablet{
+      width: 569px;
+      margin-bottom: pxToRem(27);
+    }
+    @include desktop{
+      width: 1159px;
+      margin-bottom: pxToRem(27);
+    }
+
   }
   &__form {
   }
   &__input-wrapper {
     display: flex;
     justify-content: center;
+    margin-bottom: 4rem;
+    @include tablet{
+      margin-bottom: 0;
+    }
   }
   &__form-field {
     margin: 0;
@@ -25,6 +56,13 @@
   &__input {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    width: 273px;
+    @include tablet{
+      width: 452px;
+    }
+    @include desktop{
+      width: 475px;
+    }
   }
   &__button {
     border-top-left-radius: 0;
@@ -33,20 +71,69 @@
   &__list {
     list-style: none;
     margin: 0;
+    width: 273px;
     padding: 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: pxToRem(16);
+    @include tablet{
+      justify-content: space-between;
+      width: 569px;
+      padding: 0px;
+    }
+    @include desktop{
+      justify-content: space-between;
+      width: 1159px;
+      padding: 24px 0;
+    }
   }
   &__item {
-    width: 100%;
+    width: 273px;
     display: flex;
-    @include tablet {
-      width: calc(50% - pxToRem(16));
+    @include tablet{
+      width: 273px;
     }
-    @include desktop {
-      width: calc(33.333% - pxToRem(16));
+    @include desktop{
+      width: 365px;
+    }
+    // @include tablet {
+    //   width: calc(50% - pxToRem(16));
+    // }
+    // @include desktop {
+    //   width: 1159px;
+    // }
+    & .event {
+      &-card{
+        width: 273px;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      @include tablet{
+        padding: 24px;
+        width: 365px;
+      }
+      //height: 433px;
+      
+        &__buttons{
+          display: flex;
+          flex-direction: column;
+        }
+        & button{
+          width: fit-content;
+        }
+      }
+      &-graphic {
+        width: 72px;
+        height: 72px;
+        min-width: 72px;
+        &__day{
+          font-size: 24px;
+        }
+        &__month{
+          font-size: 19px;
+        }
+      }
     }
   }
   &__error {
@@ -60,12 +147,17 @@
   &__empty-state {
     text-align: center;
     font-size: pxToRem(24);
-    font-weight: 600;
-    color: $color-charcoal;
+    font-weight: 400;
+    color: $color-gray-dark;
     margin: pxToRem(48) auto;
-    padding: pxToRem(32);
+    padding: 48px 160px 16px 160px;
     background-color: $color-white;
     border-radius: $border-radius-md;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    @include tablet{
+      padding: 48px 48px 16px 48px;
+      width: 100%;
+      margin: auto 0;
+    }
   }
 }

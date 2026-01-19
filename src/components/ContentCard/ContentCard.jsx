@@ -9,7 +9,7 @@ const ContentCard = ({
   buttonText,
   description,
   className = "",
-  buttonLink,
+  onClick,
   children,
 }) => {
   return (
@@ -24,7 +24,7 @@ const ContentCard = ({
         type="button"
         variant="secondary"
         isLink={true}
-        to={buttonLink}
+        onClick={onClick}
       >
         {buttonText}
       </Button>

@@ -1,5 +1,6 @@
 @use "../../styles/variables" as *;
 @use "../../styles/functions" as *;
+@use "../../styles/mixins" as *;
 
 .content-card {
   padding: pxToRem(24);
@@ -10,16 +11,31 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  &__icon {
+  gap: 24px;
+  width: 335px;
+  margin: 0 2.5rem;
+  @include tablet{
+    width: 568px;
+  }
+  @include desktop{
+    width: 1072px;
+    margin: 4rem 0 0 0;
+    font-size: medium;
+    padding-bottom: 32px;
   }
   &__title {
-    margin: pxToRem(16) 0 pxToRem(32) 0;
+  //  margin: pxToRem(16) 0 pxToRem(16) 0;
+  margin: 0;
+  font-size: 24px;
+  color: #1E1E1E;
   }
   &__description {
     color: $color-gray-dark;
-    margin: 0 0 pxToRem(38) 0;
+  //  margin: 0 0 pxToRem(38) 0;
+  margin: 0;
   }
   &__button {
     margin-top: auto;
+    color: $color-indigo;
   }
 }

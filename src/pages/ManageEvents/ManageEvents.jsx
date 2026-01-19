@@ -10,12 +10,24 @@ import ListItem from "../../components/List/ListItem.jsx";
 import { validateEmail } from "../../utils/validation.js";
 import Typography from "../../components/Typography/Typography.jsx";
 import "./ManageEvents.scss";
+import { useParams, useNavigate } from "react-router-dom";
 
 const ManageEvents = ({ events, attendees, onUpdateAttendees }) => {
   const [searchEmail, setSearchEmail] = useState("");
   const [error, setError] = useState("");
   const [foundAttendee, setFoundAttendee] = useState(null);
   const [attendance, setAttendance] = useState({}); // { [eventId]: 'attending' | 'notAttending' }
+
+    
+  // Recall: 
+  //     '/' goes to home/LandingPage 
+  //     'registration/:id' goes to SignupForm
+  //     'RSVP/:id' goes to EventAttendees
+  //     'list' goes to ManageEvents
+  let navigate = useNavigate();
+  function handleClickHome() {
+      navigate(`/`);
+  }
 
   // Handle input change and validate email
   const handleInputChange = (e) => {
@@ -107,7 +119,7 @@ const ManageEvents = ({ events, attendees, onUpdateAttendees }) => {
 
   return (
     <div className="manage-events">
-      <PageHeader title="Manage Events">
+      <PageHeader title="Your Events" subtitle="Input your email to view the events you are attending.">
         <Form
           className="manage-events__form"
           wrapper={false}
@@ -141,10 +153,10 @@ const ManageEvents = ({ events, attendees, onUpdateAttendees }) => {
 
       <div className="manage-events__wrapper">
         <div className="manage-events__button-group">
-          <Button isLink={true} to="/" variant="secondary">
+          <Button isLink={true} onClick={handleClickHome} variant="secondary">
             Back
           </Button>
-          <Button onClick={handleSave}>Save</Button>
+          <Button onClick={handleSave}>Save Changes</Button>
         </div>
 
         <List className="manage-events__list">

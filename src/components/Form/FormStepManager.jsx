@@ -2,6 +2,7 @@ import Button from "../Button/Button.jsx";
 import Form from "./Form.jsx";
 import PageHeader from "../PageHeader/PageHeader.jsx";
 import Typography from "../Typography/Typography.jsx";
+import { useNavigate } from "react-router-dom";
 
 const FormStepManager = ({
   children,
@@ -12,9 +13,21 @@ const FormStepManager = ({
   formSubmitted,
   nextDisabled = false,
 }) => {
+
+    
+  // Recall: 
+  //     '/' goes to home/LandingPage 
+  //     'registration/:id' goes to SignupForm
+  //     'RSVP/:id' goes to EventAttendees
+  //     'list' goes to ManageEvents
+  let navigate = useNavigate();
+  function handleClickHome(){
+    navigate(`/`);
+  }
+
   return (
     <>
-      <PageHeader title="Event">
+      <PageHeader title="Event Registraton">
         <Typography className="form-steps" variant="p">
           Step {step + 1} of {steps.length}
         </Typography>
@@ -47,7 +60,7 @@ const FormStepManager = ({
               {step === steps.length - 1 ? "Submit" : "Next"}
             </Button>
           ) : (
-            <Button isLink={true} to="/">
+            <Button isLink={true} onClick={handleClickHome}>
               Back to events
             </Button>
           )}

@@ -3,12 +3,23 @@ import List from "../../components/List/List.jsx";
 import ListItem from "../../components/List/ListItem.jsx";
 import EventCard from "../../components/EventCard/EventCard.jsx";
 import ContentCard from "../../components/ContentCard/ContentCard.jsx";
+
 import "./LandingPage.scss";
+
+import { useNavigate } from "react-router-dom";
+
 
 const LandingPage = ({ events }) => {
 
-  
-  console.log(events);
+  // Recall: 
+  //     '/' goes to home/LandingPage 
+  //     'registration/:id' goes to SignupForm
+  //     'RSVP/:id' goes to EventAttendees
+  //     'list' goes to ManageEvents
+  let navigate = useNavigate();
+  function handleClickList() {
+      navigate(`/list`);
+  }
 
   return (
     <div>
@@ -19,7 +30,7 @@ const LandingPage = ({ events }) => {
               <EventCard
                 id={event.id}
                 title={event.title}
-                date={event.date}
+                date={`${event.date}T12:00:00Z`}
                 time={event.time}
                 description={event.description}
               />
@@ -34,8 +45,8 @@ const LandingPage = ({ events }) => {
             iconName="calendar"
             cardTitle="Attending an event?"
             description="Stay organized and in the loop. Check upcoming event registrations and view schedules, updates, and important info. Everything you need to know is all in one place."
-            buttonText="View events"
-            buttonLink="/manage-events"
+            buttonText="View your events"
+            onClick={handleClickList}
           />
         </div>
       </section>

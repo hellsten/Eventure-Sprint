@@ -196,7 +196,7 @@ const SignupForm = ({ events, attendees, setAttendees }) => {
         <FormSection title={steps[0]}>
           <>
             <Typography className="signup-form__description" variant="p">
-              Fill out your personal details below to register for an event.
+              Fill out your personal details below to register for an event. We can save this information so you won’t have to fill it out again the next time!
             </Typography>
             <FormField label="First Name" htmlFor="firstName">
               {errors && errors.firstName && (

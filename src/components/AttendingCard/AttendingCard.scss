@@ -19,7 +19,7 @@
     margin: 7rem 0 10rem 0rem;
   }
   @include desktop{
-    width: 1072px;
+    max-width: 1072px;
     margin: 7rem 0 8rem 0;
   }
   &__icon {
