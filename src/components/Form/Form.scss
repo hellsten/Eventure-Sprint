@@ -10,7 +10,7 @@
   margin: pxToRem(48) auto;
   @include tablet {
     padding: pxToRem(48) pxToRem(48);
-    margin: pxToRem(96) auto;
+    margin: pxToRem(96) auto pxToRem(120) auto;
   }
   @include desktop {
     padding: pxToRem(48) pxToRem(180);

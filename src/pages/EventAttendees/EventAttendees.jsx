@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import PageHeader from "../../components/PageHeader/PageHeader.jsx";
 import Typography from "../../components/Typography/Typography.jsx";
 import Button from "../../components/Button/Button.jsx";
@@ -12,6 +12,17 @@ const EventAttendees = ({ attendees, events }) => {
   const { id } = useParams();
   const event = events.find((event) => event.id === id);
 
+  
+  // Recall: 
+  //     '/' goes to home/LandingPage 
+  //     'registration/:id' goes to SignupForm
+  //     'RSVP/:id' goes to EventAttendees
+  //     'list' goes to ManageEvents
+  let navigate = useNavigate();
+  function handleClickHome() {
+      navigate(`/`);
+  }
+
   return (
     <div>
       <PageHeader
@@ -24,7 +35,7 @@ const EventAttendees = ({ attendees, events }) => {
       />
 
       <div className="attendees-wrapper">
-        <Button variant="secondary" isLink={true} to="/">
+        <Button variant="secondary" isLink={true} onClick={handleClickHome}>
           Back
         </Button>
         <List className="attendees-list">

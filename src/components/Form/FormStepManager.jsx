@@ -13,6 +13,13 @@ const FormStepManager = ({
   formSubmitted,
   nextDisabled = false,
 }) => {
+
+    
+  // Recall: 
+  //     '/' goes to home/LandingPage 
+  //     'registration/:id' goes to SignupForm
+  //     'RSVP/:id' goes to EventAttendees
+  //     'list' goes to ManageEvents
   let navigate = useNavigate();
   function handleClickHome(){
     navigate(`/`);

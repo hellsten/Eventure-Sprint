@@ -32,11 +32,16 @@ const dayOfMonth = d.getDate();
 const year = d.getFullYear();
 //console.log(year); // ex "2025"
 
+  
+  // Recall: 
+  //     '/' goes to home/LandingPage 
+  //     'registration/:id' goes to SignupForm
+  //     'RSVP/:id' goes to EventAttendees
+  //     'list' goes to ManageEvents
 let navigate = useNavigate();
 function handleClickRegistration() {
     navigate(`/registration/${props.id}`);
 }
-
 function handleClickRSVP(){
     navigate(`/RSVP/${props.id}`);
 }

@@ -1,27 +1,21 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import PageHeader from "./components/PageHeader/PageHeader.jsx";
-import EventList from "./components/EventList/EventList.jsx"
-import ComponentDocs from "./pages/ComponentDocs/ComponentDocs.jsx";
-import PageFooter from "./components/PageFooter/PageFooter.jsx";
-import LandingPage from "./pages/LandingPage/LandingPage.jsx";
-import AttendingCard from "./components/AttendingCard/AttendingCard.jsx";
-
-import SignupForm from "./pages/SignupForm/SignupForm.jsx";
-import EventAttendees from "./pages/EventAttendees/EventAttendees.jsx";
-
 import axios from "axios";
 
-import "./App.scss";
+import PageFooter from "./components/PageFooter/PageFooter.jsx";
+import LandingPage from "./pages/LandingPage/LandingPage.jsx";
+import SignupForm from "./pages/SignupForm/SignupForm.jsx";
+import EventAttendees from "./pages/EventAttendees/EventAttendees.jsx";
 import ManageEvents from "./pages/ManageEvents/ManageEvents.jsx";
+import ComponentDocs from "./pages/ComponentDocs/ComponentDocs.jsx"
 
+import "./App.scss";
 
 const App = () => {
 
-
-  {/* Notes: 
-    - adding T12:00:00Z at the end of date prop corrects the date bug 
-    - time prop not consistent throughout but decided to leave it the way it is to match the MockUps*/}
+  // Notes: 
+  //   - adding T12:00:00Z at the end of date prop corrects the date bug 
+  //   - time prop not consistent throughout but decided to leave it the way it is to match the MockUps*
   // const eventData = [
   //     {
   //       "id": "001",
@@ -60,10 +54,11 @@ const App = () => {
   //     }
   //   ]
 
-  const [eventData, setEventData] = useState([]);
-
+  //Creating a useState to register an api key
   const [user, setUser] = useState(null);
-
+  //Fetching the event data from the api
+  const [eventData, setEventData] = useState([]);
+  //Gettign the attendee information from the api
   const [attendees, setAttendees] = useState([]);
 
   useEffect(() => {
@@ -83,8 +78,6 @@ const App = () => {
       );
       setAttendees(attendeesResponse.data);
       // console.log(attendeesResponse);
-
-
     };
     fetchUser();
   }, []);
@@ -92,26 +85,10 @@ const App = () => {
 
   return (
     <>
-      {/* <PageHeader className="page-header-title" title="Events"/>
-      <EventList events={eventData}/>
-      <div className="attending-banner">
-        <AttendingCard 
-          iconName="calendar"
-          cardTitle="Attending an event?"
-          description="Stay organized and in the loop. Check your upcoming event registrations and view schedules, updates, and important info. Everything you need to know is all in one place."
-          buttonText="View your events"
-          buttonLink="#"
-        />
-      </div>
-      <PageFooter /> */}
-
-      
-
-      
       <BrowserRouter>
         <Routes>
-          {/* Need to include props */}
           <Route path="/" element={<LandingPage events={eventData}/>} />
+          {/* Re: SignupForm, styling doesn't match perfectly. Changed some text to match. When response is submitted, does not say confirmation */}
           <Route path="registration/:id" element={<SignupForm events={eventData} attendees={attendees} setAttendees={setAttendees} user={user}/>} />
           <Route path="RSVP/:id" element={<EventAttendees events={eventData} attendees={attendees}/>} />
           <Route path="list" element={<ManageEvents events={eventData} attendees={attendees} onUpdateAttendees={setAttendees}/>} />
@@ -120,12 +97,6 @@ const App = () => {
         <PageFooter />
         {/* <ComponentDocs /> */}
       </BrowserRouter> 
-
-      
-
-    
-      
-
     </>
   );
 };

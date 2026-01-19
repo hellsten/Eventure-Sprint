@@ -14,7 +14,7 @@ const AttendingCard = ({
   buttonLink,
   children,
 }) => {
-        let navigate = useNavigate();
+    let navigate = useNavigate();
     function handleClickList() {
       navigate('/list');
     }
