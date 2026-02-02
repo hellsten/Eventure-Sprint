@@ -22,36 +22,36 @@ const App = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      // const response = await axios.get("https://unit-3-api-6b6268be0363.herokuapp.com/register");
-      // setUser(response.data);
-      // console.log(response.data);
+    //   const response = await axios.get("https://unit-3-api-6b6268be0363.herokuapp.com/register");
+    //   setUser(response.data);
+    //   console.log("Register: ", response.data);
 
-      // const eventsResponse = await axios.get(
-      //   `https://unit-3-api-6b6268be0363.herokuapp.com/events?api_key=${response.data}`
-      // );
-      // setEventData(eventsResponse.data);
-      // console.log(eventsResponse);
+    //   const eventsResponse = await axios.get(
+    //     `https://unit-3-api-6b6268be0363.herokuapp.com/events?api_key=${response.data}`
+    //   );
+    //   setEventData(eventsResponse.data);
+    //   console.log("Events: ", eventsResponse);
 
-      // const attendeesResponse = await axios.get(
-      //   `https://unit-3-api-6b6268be0363.herokuapp.com/attendees?api_key=${response.data}`
-      // );
-      // setAttendees(attendeesResponse.data);
-      // console.log(attendeesResponse);
+    //   const attendeesResponse = await axios.get(
+    //     `https://unit-3-api-6b6268be0363.herokuapp.com/attendees?api_key=${response.data}`
+    //   );
+    //   setAttendees(attendeesResponse.data);
+    //   console.log("Attendees ",attendeesResponse);
 
-        //Adding this for simplicity
+        // Adding this for simplicity
       const API_BASE = "http://localhost:5050";
 
       const response = await axios.get(`${API_BASE}/register`);
       setUser(response.data); // testing because I might not need a user here
-      console.log("Register:", response.data);
+      // console.log("Register:", response.data);
 
       const eventsResponse = await axios.get(`${API_BASE}/events`);
       setEventData(eventsResponse.data);
-      console.log("Events:", eventsResponse.data);
+      // console.log("Events:", eventsResponse.data);
 
       const attendeesResponse = await axios.get(`${API_BASE}/attendees`);
       setAttendees(attendeesResponse.data);
-      console.log("Attendees:", attendeesResponse.data);
+      // console.log("Attendees:", attendeesResponse.data);
 
           };
     fetchUser();
