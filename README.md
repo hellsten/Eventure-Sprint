@@ -40,7 +40,13 @@ Tech Stack
 
 Project Structure
 
-public/ src/ ├── components/ ├── pages/ ├── assets/ ├── styles/ └── …
+public/ 
+src/ 
+├── components/ 
+├── pages/ 
+├── assets/ 
+├── styles/ 
+└── …
 
 ------------------------------------------------------------------------
 
